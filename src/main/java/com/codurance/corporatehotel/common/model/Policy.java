@@ -5,17 +5,17 @@ import java.util.List;
 
 public class Policy {
 
-    private List<RoomTypes> roomTypes = new ArrayList<>();
+  private List<RoomTypes> roomTypes = new ArrayList<>();
 
-    public List<RoomTypes> getRoomTypes() {
-        return roomTypes;
-    }
+  public List<RoomTypes> getRoomTypes() {
+    return roomTypes;
+  }
 
-    public void setRoomTypes(List<RoomTypes> roomTypes) {
-        this.roomTypes = roomTypes;
-    }
+  public void setRoomTypes(List<RoomTypes> roomTypes) {
+    this.roomTypes = roomTypes;
+  }
 
-    public void addRoomType(RoomTypes roomType) {
-        this.roomTypes.add(roomType);
-    }
+  public void addRoomType(RoomTypes roomType) {
+    this.roomTypes.add(roomType);
+  }
 }

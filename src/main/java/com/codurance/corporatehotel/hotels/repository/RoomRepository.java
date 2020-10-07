@@ -5,9 +5,9 @@ import com.codurance.corporatehotel.hotels.model.Room;
 
 public interface RoomRepository {
 
-    void persist(Integer hotelId, Integer roomNumber, RoomTypes roomType);
+  void persist(Integer hotelId, Integer roomNumber, RoomTypes roomType);
 
-    Room findByHotelAndNumber(Integer hotelId, Integer roomNumber);
+  Room findByHotelAndNumber(Integer hotelId, Integer roomNumber);
 
-    void update(Integer hotelId, Integer roomNumber, RoomTypes roomType);
+  void update(Integer hotelId, Integer roomNumber, RoomTypes roomType);
 }

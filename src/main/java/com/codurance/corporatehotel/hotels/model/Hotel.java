@@ -1,6 +1,7 @@
 package com.codurance.corporatehotel.hotels.model;
 
 public class Hotel {
+
   public Hotel(Integer id, String name) {
     this.id = id;
     this.name = name;

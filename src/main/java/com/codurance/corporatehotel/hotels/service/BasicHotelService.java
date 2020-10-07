@@ -13,8 +13,8 @@ import org.springframework.stereotype.Service;
 @Service
 public class BasicHotelService implements HotelService {
 
-  private HotelRepository hotelRepository;
-  private RoomRepository roomRepository;
+  private final HotelRepository hotelRepository;
+  private final RoomRepository roomRepository;
 
   @Autowired
   public BasicHotelService(HotelRepository hotelRepository, RoomRepository roomRepository) {

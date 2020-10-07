@@ -5,9 +5,9 @@ import com.codurance.corporatehotel.hotels.model.Hotel;
 
 public interface HotelService {
 
-    void addHotel(Integer hotelId, String hotelName);
+  void addHotel(Integer hotelId, String hotelName);
 
-    void setRoom(Integer hotelId, Integer roomNumber, RoomTypes roomType);
+  void setRoom(Integer hotelId, Integer roomNumber, RoomTypes roomType);
 
-    Hotel findHotelById(Integer hotelId);
+  Hotel findHotelById(Integer hotelId);
 }

@@ -1,7 +1,6 @@
 package com.codurance.corporatehotel.hotels.repository;
 
 import com.codurance.corporatehotel.hotels.model.Hotel;
-
 import java.util.HashMap;
 import java.util.Map;
 import org.springframework.stereotype.Repository;
@@ -9,7 +8,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public class InMemoryHotelRepository implements HotelRepository {
 
-  private Map<Integer, Hotel> hotels;
+  private final Map<Integer, Hotel> hotels;
 
   public InMemoryHotelRepository() {
     this.hotels = new HashMap<>();

@@ -6,17 +6,17 @@ import com.codurance.corporatehotel.policies.model.EmployeePolicy;
 
 public interface PolicyRepository {
 
-    void persistEmployeePolicy(Integer employeeId, RoomTypes roomType);
+  void persistEmployeePolicy(Integer employeeId, RoomTypes roomType);
 
-    void persistCompanyPolicy(Integer companyId, RoomTypes roomType);
+  void persistCompanyPolicy(Integer companyId, RoomTypes roomType);
 
-    EmployeePolicy findForEmployee(Integer employeeId);
+  EmployeePolicy findForEmployee(Integer employeeId);
 
-    void updateEmployeePolicy(Integer employeeId, RoomTypes roomType);
+  void updateEmployeePolicy(Integer employeeId, RoomTypes roomType);
 
-    CompanyPolicy findForCompany(Integer companyId);
+  CompanyPolicy findForCompany(Integer companyId);
 
-    void updateCompanyPolicy(Integer companyId, RoomTypes roomType);
+  void updateCompanyPolicy(Integer companyId, RoomTypes roomType);
 
-    void deleteEmployee(Integer employeeId);
+  void deleteEmployee(Integer employeeId);
 }
