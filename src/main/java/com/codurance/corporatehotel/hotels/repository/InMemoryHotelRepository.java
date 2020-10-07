@@ -4,20 +4,25 @@ import com.codurance.corporatehotel.hotels.model.Hotel;
 
 import java.util.HashMap;
 import java.util.Map;
+import org.springframework.stereotype.Repository;
 
-public class InMemoryHotelRepository implements HotelRepository{
+@Repository
+public class InMemoryHotelRepository implements HotelRepository {
 
-    private Map<Integer, Hotel> hotels = new HashMap<>();
+  private Map<Integer, Hotel> hotels;
 
-    public void persist(Integer hotelId, String hotelName){
-        Hotel hotel = new Hotel();
-        hotel.setId(hotelId);
-        hotel.setName(hotelName);
+  public InMemoryHotelRepository() {
+    this.hotels = new HashMap<>();
+  }
 
-        this.hotels.put(hotelId, hotel);
-    }
+  public void persist(Integer hotelId, String hotelName) {
+    Hotel hotel = new Hotel();
+    hotel.setId(hotelId);
+    hotel.setName(hotelName);
+    this.hotels.put(hotelId, hotel);
+  }
 
-    public Hotel findById(Integer hotelId) {
-        return this.hotels.get(hotelId);
-    }
+  public Hotel findById(Integer hotelId) {
+    return this.hotels.get(hotelId);
+  }
 }
