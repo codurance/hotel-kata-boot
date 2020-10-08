@@ -32,7 +32,7 @@ public class HotelResourceShould {
   }
 
   @Test
-  void find_a_hotel_that_already_exist() throws Exception {
+  void create_and_fetch_a_hotel() throws Exception {
     Hotel hotel = new Hotel(HOTEL_ID, HOTEL_NAME);
     String postValue = objectMapper.writeValueAsString(hotel);
     mockMvc
