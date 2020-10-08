@@ -1,4 +1,4 @@
-package com.codurance.corporatehotel.common.exception;
+package com.codurance.corporatehotel.hotels.exception;
 
 public class HotelNotExistsException extends RuntimeException {
 

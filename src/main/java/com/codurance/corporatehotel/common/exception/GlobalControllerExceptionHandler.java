@@ -2,6 +2,7 @@ package com.codurance.corporatehotel.common.exception;
 
 import com.codurance.corporatehotel.common.model.Error;
 import com.codurance.corporatehotel.hotels.exception.HotelExistsException;
+import com.codurance.corporatehotel.hotels.exception.HotelNotExistsException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import org.springframework.http.HttpStatus;

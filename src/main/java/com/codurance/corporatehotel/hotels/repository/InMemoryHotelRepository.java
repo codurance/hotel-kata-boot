@@ -1,6 +1,6 @@
 package com.codurance.corporatehotel.hotels.repository;
 
-import com.codurance.corporatehotel.common.exception.HotelNotExistsException;
+import com.codurance.corporatehotel.hotels.exception.HotelNotExistsException;
 import com.codurance.corporatehotel.hotels.exception.HotelExistsException;
 import com.codurance.corporatehotel.hotels.model.Hotel;
 import java.util.HashMap;

@@ -10,7 +10,7 @@ import com.codurance.corporatehotel.bookings.exception.InsufficientPolicyExcepti
 import com.codurance.corporatehotel.bookings.exception.NoRoomAvailableException;
 import com.codurance.corporatehotel.bookings.model.Booking;
 import com.codurance.corporatehotel.bookings.repository.BookingRepository;
-import com.codurance.corporatehotel.common.exception.HotelNotExistsException;
+import com.codurance.corporatehotel.hotels.exception.HotelNotExistsException;
 import com.codurance.corporatehotel.common.model.RoomTypes;
 import com.codurance.corporatehotel.hotels.model.Hotel;
 import com.codurance.corporatehotel.hotels.service.HotelService;
