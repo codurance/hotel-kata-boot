@@ -1,7 +1,5 @@
 package com.codurance.corporatehotel.hotels.resource;
 
-import com.codurance.corporatehotel.common.exception.HotelNotExistsException;
-import com.codurance.corporatehotel.hotels.exception.HotelExistsException;
 import com.codurance.corporatehotel.hotels.model.Hotel;
 import com.codurance.corporatehotel.hotels.service.HotelService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +10,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -27,23 +24,14 @@ public class HotelResource {
   }
 
   @GetMapping("/{id}")
-  public ResponseEntity<Hotel> getHotelById(@PathVariable String id) {
-    try {
-      return new ResponseEntity<>(hotelService.findHotelById(Integer.valueOf(id)), HttpStatus.OK);
-    } catch (HotelNotExistsException e) {
-      return new ResponseEntity(e.getMessage(), HttpStatus.NOT_FOUND);
-    }
+  public ResponseEntity<Hotel> getHotelById(@PathVariable final String id) {
+    return new ResponseEntity<>(hotelService.findHotelById(Integer.valueOf(id)), HttpStatus.OK);
   }
 
   @PostMapping
-  @ResponseBody
-  public ResponseEntity<Hotel> addHotel(@RequestBody Hotel hotel) {
-    try {
-      hotelService.addHotel(hotel.getId(), hotel.getName());
-      final Hotel newHotel = hotelService.findHotelById(hotel.getId());
-      return new ResponseEntity<>(newHotel, HttpStatus.CREATED);
-    } catch (HotelExistsException e) {
-      return new ResponseEntity(e.getMessage(), HttpStatus.BAD_REQUEST);
-    }
+  public ResponseEntity<Hotel> addHotel(@RequestBody final Hotel hotel) {
+    hotelService.addHotel(hotel.getId(), hotel.getName());
+    Hotel newHotel = hotelService.findHotelById(hotel.getId());
+    return new ResponseEntity<>(newHotel, HttpStatus.CREATED);
   }
 }
