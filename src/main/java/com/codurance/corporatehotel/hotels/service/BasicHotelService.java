@@ -23,10 +23,6 @@ public class BasicHotelService implements HotelService {
   }
 
   public void addHotel(Integer hotelId, String hotelName) {
-    if (this.findHotelById(hotelId) != null) {
-      throw new HotelExistsException();
-    }
-
     this.hotelRepository.persist(hotelId, hotelName);
   }
 

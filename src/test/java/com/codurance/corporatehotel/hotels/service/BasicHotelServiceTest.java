@@ -1,7 +1,8 @@
 package com.codurance.corporatehotel.hotels.service;
 
-import static org.assertj.core.api.Assertions.assertThatThrownBy;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.BDDMockito.given;
+import static org.mockito.Mockito.doThrow;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 
@@ -50,12 +51,12 @@ class BasicHotelServiceTest {
   @Test
   public void shouldNotAddHotel() throws Exception {
     // given
-    given(hotelRepositoryStub.findById(hotelId)).willReturn(new Hotel());
+    doThrow(HotelExistsException.class).when(hotelRepositoryStub).persist(hotelId, hotelName);
 
     // when
     // then
-    assertThatThrownBy(() -> hotelService.addHotel(hotelId, hotelName))
-        .isInstanceOf(HotelExistsException.class);
+    assertThrows(HotelExistsException.class, () -> hotelService.addHotel(hotelId, hotelName));
+
   }
 
   @Test
