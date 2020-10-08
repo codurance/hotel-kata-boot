@@ -1,6 +1,13 @@
 package com.codurance.corporatehotel.hotels.model;
 
+import javax.validation.constraints.NotNull;
+
 public class Hotel {
+
+  @NotNull(message = "cannot be null")
+  private Integer id;
+  @NotNull(message = "cannot be null")
+  private String name;
 
   public Hotel(Integer id, String name) {
     this.id = id;
@@ -9,9 +16,6 @@ public class Hotel {
 
   public Hotel() {
   }
-
-  private Integer id;
-  private String name;
 
   public Integer getId() {
     return id;
