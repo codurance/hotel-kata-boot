@@ -36,4 +36,20 @@ public class Room {
   public void setRoomType(RoomTypes roomType) {
     this.roomType = roomType;
   }
+
+
+  public Room hotelId(Integer hotelId) {
+    this.hotelId = hotelId;
+    return this;
+  }
+
+  public Room roomNumber(Integer roomNumber) {
+    this.roomNumber = roomNumber;
+    return this;
+  }
+
+  public Room roomType(RoomTypes roomType) {
+    this.roomType = roomType;
+    return this;
+  }
 }
