@@ -7,9 +7,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import com.codurance.corporatehotel.common.model.RoomTypes;
 import com.codurance.corporatehotel.hotels.model.Hotel;
 import com.codurance.corporatehotel.hotels.model.Room;
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import netscape.javascript.JSObject;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -28,7 +26,8 @@ public class HotelResourceShould {
   final String HOTEL_NAME = "Risk";
   ObjectMapper objectMapper = new ObjectMapper();
 
-  @Autowired private MockMvc mockMvc;
+  @Autowired
+  private MockMvc mockMvc;
 
   @Test
   void not_find_an_hotel_given_is_not_in_the_system() throws Exception {
@@ -47,10 +46,10 @@ public class HotelResourceShould {
 
   @Test
   void create_a_hotel_and_add_a_room_to_it() throws Exception {
-    Hotel hotel = new Hotel(HOTEL_ID, HOTEL_NAME);
+    Hotel hotel = new Hotel(980, "Barcelona Miramar");
     String hotelBody = createPostBody(hotel);
 
-    final Room room = new Room().roomNumber(1).hotelId(1).roomType(RoomTypes.STANDARD);
+    final Room room = new Room().roomNumber(1).hotelId(980).roomType(RoomTypes.STANDARD);
     String roomBody = createPostBody(room);
 
     mockMvc
@@ -64,6 +63,5 @@ public class HotelResourceShould {
   private String createPostBody(Object object) throws Exception {
     ObjectMapper objectMapper = new ObjectMapper();
     return objectMapper.writeValueAsString(object);
-
   }
 }

@@ -39,7 +39,7 @@ public class HotelResource {
 
   @PostMapping("/rooms")
   public ResponseEntity<Room> addRoom(@RequestBody @Valid final Room room) {
-    hotelService.setRoom(room.getHotelId(), room.getRoomNumber(),room.getRoomType());
+    hotelService.setRoom(room.getHotelId(), room.getRoomNumber(), room.getRoomType());
     return new ResponseEntity<>(room, HttpStatus.CREATED);
   }
 }
